@@ -1,0 +1,26 @@
+{
+  "name": "flashloan-arb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "dotenv": "^16.5.0",
+    "ethers": "^5.8.0",
+    "hardhat": "^2.24.0"
+  },
+  "dependencies": {
+    "@0xsequence/multicall": "^1.10.15",
+    "@aave/core-v3": "^1.19.3",
+    "@flashbots/ethers-provider-bundle": "^0.2.1",
+    "@openzeppelin/contracts": "^5.3.0",
+    "@uniswap/v2-periphery": "^1.1.0-beta.0",
+    "axios": "^1.9.0"
+  }
+}
