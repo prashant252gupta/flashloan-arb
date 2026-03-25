@@ -1,6 +1,11 @@
 require("dotenv").config();
 require("@nomiclabs/hardhat-ethers");
 
+const mainnetUrl = process.env.ARB_RPC_URL || process.env.RPC_URL || process.env.ALCHEMY_URL;
+const sepoliaUrl = process.env.ALCHEMY_URL_SEPOLIA || "";
+const polygonUrl = process.env.POLYGON_RPC || "";
+const deployerKey = process.env.ARB_PRIVATE_KEY || process.env.PRIVATE_KEY;
+
 module.exports = {
   solidity: {
     version: "0.8.20",
@@ -11,23 +16,20 @@ module.exports = {
   },
   networks: {
     hardhat: {},
-
     mainnet: {
-      url: process.env.ALCHEMY_URL,
-      accounts: [process.env.PRIVATE_KEY].filter(Boolean)
+      url: mainnetUrl,
+      accounts: [deployerKey].filter(Boolean)
     },
-
     sepolia: {
-      url: process.env.ALCHEMY_URL_SEPOLIA,
-      accounts: [process.env.PRIVATE_KEY].filter(Boolean)
+      url: sepoliaUrl,
+      accounts: [deployerKey].filter(Boolean)
     },
-
     polygon: {
-      url: process.env.POLYGON_RPC,
-      accounts: [process.env.PRIVATE_KEY].filter(Boolean)
+      url: polygonUrl,
+      accounts: [deployerKey].filter(Boolean)
     }
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY  // optional for verifying
+    apiKey: process.env.ETHERSCAN_API_KEY
   }
 };

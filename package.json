@@ -1,10 +1,15 @@
 {
   "name": "flashloan-arb",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Cross-DEX arbitrage scanner with historical replay, multicall batching, and private-orderflow execution scaffolding",
+  "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bot": "node bot.js",
+    "scan:arb": "node scripts/scan_arb.js",
+    "backtest:arb": "node scripts/backtest_arb_2months.js",
+    "private:dryrun": "node scripts/private_dryrun.js",
+    "deploy:cycle-executor": "npx hardhat run scripts/deploy_cycle_executor.js --network mainnet",
+    "compile": "npx hardhat compile"
   },
   "keywords": [],
   "author": "",
